@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18摸 - 深度探索与体验指南</title>
+    <meta name="description" content="18摸为您提供关于人体美学、感官探索与身心体验的专业指南。包含科学原理、安全须知、体验建议及相关资源，旨在传递健康、正向的生活方式。">
+    <meta name="keywords" content="18摸, 感官体验, 身体探索, 健康生活, 心理调适">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 60px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .intro-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .intro-image {
+            background-color: #ddd;
+            height: 400px;
+            border-radius: var(--border-radius);
+            background-image: url('https://picsum.photos/seed/relax/800/600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Guide Cards */
+        .guide-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #ecf0f1;
+            color: var(--text-secondary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Safety Notice */
+        .notice-section {
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .notice-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            color: #856404;
+        }
+
+        .notice-box h4 {
+            margin-bottom: 10px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: white;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f1f1f1;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #bdc3c7;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-image {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">18<span>摸</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#guide">体验指南</a></li>
+                    <li><a href="#safety">安全须知</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">了解更多</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>探索身心边界</h1>
+            <p>关于自我认知、感官体验与身心平衡的深度探索。我们致力于提供科学、健康且负责任的指导，帮助您建立更和谐的身心关系。</p>
+            <a href="#guide" class="cta-button" style="background-color: white; color: var(--primary-color);">开始探索</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section class="intro-section">
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <h2>什么是健康的探索？</h2>
+                    <p>在现代社会，关注自身的感官体验和身心状态已成为一种自我关怀的重要方式。所谓的“探索”，并非单纯指代某种行为，更多的是指对自身身体反应、心理需求以及情感连接的深度觉察。</p>
+                    <p>通过科学的认知和适当的引导，个体能够更好地理解身体信号，从而在保持身心健康的前提下，获得更丰富的生活体验。这需要建立在尊重、自愿和安全的基础之上。</p>
+                </div>
+                <div class="intro-image"></div>
+            </div>
+        </section>
+
+        <section id="guide" class="guide-section">
+            <h2 class="section-title">核心体验指南</h2>
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card-img" style="background-image: url('https://picsum.photos/seed/calm/400/300');"></div>
+                    <div class="card-content">
+                        <span class="card-tag">心理调适</span>
+                        <h3>建立正向心理暗示</h3>
+                        <p>在开始任何形式的探索之前，心理建设至关重要。通过冥想、深呼吸或阅读相关书籍，调整心态，排除杂念，让身心处于放松和开放的状态。</p>
+                        <a href="#" class="card-link">阅读更多 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img" style="background-image: url('https://picsum.photos/seed/relax2/400/300');"></div>
+                    <div class="card-content">
+                        <span class="card-tag">自我觉察</span>
+                        <h3>倾听身体的信号</h3>
+                        <p>每个人的身体构造和敏感度都不同。学会观察自己的呼吸节奏、肌肉紧绷度以及情绪变化，是确保体验舒适且安全的第一步。</p>
+                        <a href="#" class="card-link">阅读更多 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img" style="background-image: url('https://picsum.photos/seed/safe/400/300');"></div>
+                    <div class="card-content">
+                        <span class="card-tag">环境营造</span>
+                        <h3>创造私密与安全空间</h3>
+                        <p>选择一个不受打扰、温度适宜且私密的场所。良好的环境氛围能够有效降低焦虑感，提升体验的专注度和愉悦感。</p>
+                        <a href="#" class="card-link">阅读更多 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="safety" class="notice-section">
+            <div class="container">
+                <div class="notice-box">
+                    <h4>安全与健康提示</h4>
+                    <p>在探索过程中，请务必遵循“知情同意”和“循序渐进”的原则。避免过度追求刺激而忽视身体的承受能力。如有任何不适或疼痛感，应立即停止并寻求专业医疗建议。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="container">
+                <div class="faq-item">
+                    <div class="faq-question">探索前需要准备什么？</div>
+                    <div class="faq-answer">建议先进行简单的身体放松运动，调整好情绪。同时，确保私密空间的安全与卫生，准备好舒适的衣物或用品。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何判断是否过度？</div>
+                    <div class="faq-answer">如果出现心悸、过度出汗、焦虑不安或身体明显疼痛，通常意味着已经超出了舒适区，此时应立即停止并休息。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">这对心理健康有影响吗？</div>
+                    <div class="faq-answer">适度的探索有助于释放压力、缓解焦虑，并增强自我接纳感。但前提是保持理性和适度，避免成瘾或心理依赖。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">有什么禁忌人群吗？</div>
+                    <div class="faq-answer">患有严重心血管疾病、精神类疾病或处于生理期剧烈不适的人群，建议避免进行此类深度身心探索，并咨询医生意见。</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">隐私政策</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">&copy; 2023 18摸. 仅供成年用户参考，请理性对待。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠效果
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
