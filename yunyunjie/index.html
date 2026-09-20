@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韵云姐 - 深度解析时尚穿搭技巧、职场进阶心得与生活美学指南。提供实用的穿衣搭配建议、个人成长方法论及高品质生活资讯。">
+    <meta name="keywords" content="韵云姐,穿搭技巧,职场进阶,生活美学,时尚穿搭,个人成长">
+    <title>韵云姐-时尚穿搭与职场进阶生活指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f0f2f5 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* 通用区块 */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        /* 穿搭推荐网格 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* 职场进阶侧边栏布局 */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .article-list .article-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-thumb {
+            width: 200px;
+            height: 140px;
+            background-color: #ddd;
+            border-radius: var(--border-radius);
+            flex-shrink: 0;
+        }
+
+        .article-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 侧边栏 */
+        aside .widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .stat-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.9rem;
+        }
+
+        .stat-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* 问答/FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .article-item {
+                flex-direction: column;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">韵<span>云姐</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#fashion">穿搭指南</a></li>
+                <li><a href="#career">职场进阶</a></li>
+                <li><a href="#lifestyle">生活美学</a></li>
+                <li><a href="#about">关于我</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>做自己的时尚女王</h1>
+            <p>韵云姐致力于分享实用、高性价比的穿搭技巧与职场生存法则。无论你是职场新人还是追求品质生活的都市女性，这里都有你需要的灵感。</p>
+            <a href="#fashion" class="cta-button">开始探索穿搭</a>
+        </div>
+    </section>
+
+    <!-- 穿搭指南板块 -->
+    <section id="fashion">
+        <div class="container">
+            <div class="section-header">
+                <h2>本周穿搭灵感</h2>
+                <p>根据不同场合与身材特点，打造你的专属风格</p>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-img-placeholder">👔</div>
+                    <div class="card-content">
+                        <span class="card-tag">职场通勤</span>
+                        <h3 class="card-title">30岁女性的职场高级感穿搭公式</h3>
+                        <p class="card-excerpt">告别廉价感，用基础款穿出质感。学会这3个配色技巧，让你在会议室气场全开。</p>
+                        <a href="#" class="card-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img-placeholder">👗</div>
+                    <div class="card-content">
+                        <span class="card-tag">约会约会</span>
+                        <h3 class="card-title">温柔风约会穿搭：显瘦又显高</h3>
+                        <p class="card-excerpt">不想穿得太隆重？试试法式浪漫风。搭配小配饰，轻松拿捏心动氛围。</p>
+                        <a href="#" class="card-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img-placeholder">👜</div>
+                    <div class="card-content">
+                        <span class="card-tag">配饰</span>
+                        <h3 class="card-title">包包颜色怎么选？提升衣品的关键</h3>
+                        <p class="card-excerpt">包包是全身的点睛之笔。这篇指南教你如何根据当天的服装选择最合适的包包颜色。</p>
+                        <a href="#" class="card-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 职场进阶板块 -->
+    <section id="career" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <h2>职场进阶</h2>
+                <p>从执行力到领导力，助力你的职业生涯攀升</p>
+            </div>
+            <div class="content-layout">
+                <!-- 文章列表 -->
+                <div class="article-list">
+                    <article class="article-item">
+                        <div class="article-thumb"></div>
+                        <div class="article-info">
+                            <span class="card-tag">沟通技巧</span>
+                            <h3>如何优雅地拒绝不合理的工作要求？</h3>
+                            <p class="article-meta">2023-10-15 | 职场生存</p>
+                            <p>在职场中，学会拒绝并不是冷漠，而是为了更高效地完成有价值的工作。本文提供了一套话术模板，让你既能守住底线，又不伤和气。</p>
+                            <a href="#" class="card-link" style="margin-top:0.5rem;">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="article-item">
+                        <div class="article-thumb"></div>
+                        <div class="article-info">
+                            <span class="card-tag">时间管理</span>
+                            <h3>自律的真相：不是靠意志力，而是靠系统</h3>
+                            <p class="article-meta">2023-10-10 | 个人成长</p>
+                            <p>为什么你总是半途而废？因为意志力是有限的资源。建立一套可执行的流程，比强迫自己早起更有用。</p>
+                            <a href="#" class="card-link" style="margin-top:0.5rem;">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="article-item">
+                        <div class="article-thumb"></div>
+                        <div class="article-info">
+                            <span class="card-tag">技能提升</span>
+                            <h3>下班后2小时，决定你5年后的样子</h3>
+                            <p class="article-meta">2023-10-05 | 学习方法</p>
+                            <p>利用好下班后的碎片时间进行深度学习，是拉开人与人差距最快的方式。推荐3个高回报的副业方向。</p>
+                            <a href="#" class="card-link" style="margin-top:0.5rem;">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 侧边栏 -->
+                <aside>
+                    <div class="widget">
+                        <h4 class="widget-title">热门标签</h4>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                            <span style="background:#eee; padding:4px 10px; border-radius:4px; font-size:0.85rem;">#极简主义</span>
+                            <span style="background:#eee; padding:4px 10px; border-radius:4px; font-size:0.85rem;">#时间管理</span>
+                            <span style="background:#eee; padding:4px 10px; border-radius:4px; font-size:0.85rem;">#穿搭</span>
+                            <span style="background:#eee; padding:4px 10px; border-radius:4px; font-size:0.85rem;">#阅读</span>
+                            <span style="background:#eee; padding:4px 10px; border-radius:4px; font-size:0.85rem;">#护肤</span>
+                        </div>
+                    </div>
+
+                    <div class="widget">
+                        <h4 class="widget-title">阅读排行</h4>
+                        <ul class="stat-list">
+                            <li><span>职场沟通话术大全</span> <span>12k</span></li>
+                            <li><span>小个子显高穿搭技巧</span> <span>9.8k</span></li>
+                            <li><span>如何建立早晨仪式感</span> <span>8.5k</span></li>
+                            <li><span>30岁存款目标规划</span> <span>7.2k</span></li>
+                            <li><span>高情商回复指南</span> <span>6.1k</span></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题板块 -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+                <p>关于生活、穿搭与成长的疑问</p>
+            </div>
+            <div class="grid-3">
+                <div class="faq-item">
+                    <div class="faq-question">Q: 韵云姐的风格适合所有年龄段的女性吗？</div>
+                    <div class="faq-answer">A: 我们的穿搭指南侧重于基础款与质感，强调实穿性和舒适性，适合20岁到50岁追求生活品质的女性参考。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何开始我的第一份副业？</div>
+                    <div class="faq-answer">A: 建议从自己的兴趣或擅长领域入手，利用业余时间积累经验。不要急于求成，先完成再完美。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 职场穿搭有哪些雷区需要避免？</div>
+                    <div class="faq-answer">A: 避免过于暴露、花哨或带有明显品牌Logo的服装。保持整洁、合身是职场穿搭的第一原则。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于板块 -->
+    <section id="about" style="background-color: #2c3e50; color: white;">
+        <div class="container">
+            <div class="content-layout">
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">认识韵云姐</h2>
+                    <p style="margin-bottom: 1rem; opacity: 0.9;">
+                        韵云姐，一名深耕时尚与职场领域多年的内容创作者。我坚信，外在的形象管理是内在自信的外化，而持续的学习则是职业生涯的基石。
+                    </p>
+                    <p style="opacity: 0.9;">
+                        本站旨在打破信息差，用最通俗易懂的语言分享实用的生活智慧。希望能陪伴每一位读者，在忙碌的都市生活中找到属于自己的节奏。
+                    </p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 8px; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">订阅更新</h3>
+                    <p style="margin-bottom: 1rem; font-size: 0.9rem; opacity: 0.8;">每周推送最新穿搭灵感与职场干货</p>
+                    <input type="email" placeholder="输入您的邮箱" style="width: 100%; padding: 0.8rem; border-radius: 4px; border: none; margin-bottom: 0.5rem;">
+                    <button class="cta-button" style="width: 100%; border:none; cursor: pointer;">订阅</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>韵云姐</h4>
+                <p style="font-size: 0.9rem; color: #bdc3c7; line-height: 1.8;">
+                    专注于分享女性成长、时尚穿搭与职场进阶的实用指南。做更好的自己，从现在开始。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">合作联系</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">小红书</a></li>
+                    <li><a href="#">微博</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 韵云姐. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+                                                                                                                          </html>
