@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="主公受惊了 - 专注古言权谋、宫廷心计与帝王宠溺题材的原创漫画与小说阅读平台。提供最新章节更新、热门榜单推荐及读者社区互动。">
+    <meta name="keywords" content="主公受惊了,古言漫画,帝王宠文,权谋小说,在线阅读">
+    <title>主公受惊了 - 古言权谋与帝王宠溺漫画小说阅读</title>
+    <style>
+        :root {
+            --primary-color: #8e2de2;
+            --secondary-color: #4a00e0;
+            --accent-color: #ffd700;
+            --bg-color: #f8f5f2;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-sub: #7f8c8d;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .search-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/emperor/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-main);
+            padding: 12px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-tab {
+            padding: 8px 20px;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .filter-tab.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .sort-select {
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+            color: var(--text-main);
+            outline: none;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-cover {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 215, 0, 0.9);
+            color: #333;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 10px;
+        }
+
+        .card-tags span {
+            background: #f0f0f0;
+            color: #666;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+
+        .read-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            background: #f8f5f2;
+            color: var(--secondary-color);
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .read-btn:hover {
+            background: #eef2ff;
+        }
+
+        /* Category Section */
+        .category-section {
+            background: white;
+            padding: 50px 0;
+            margin-top: 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-item {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: all 0.3s;
+        }
+
+        .category-item:hover {
+            border-color: var(--secondary-color);
+            background: #f8f5f2;
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .category-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            nav { display: none; } /* Simplified for mobile */
+            .hero { height: 400px; }
+            .hero h1 { font-size: 2rem; }
+            .filter-bar { flex-direction: column; align-items: stretch; }
+            .filter-tabs { overflow-x: auto; padding-bottom: 5px; }
+            .content-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">
+            主公受惊了 <span>Web版</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">全本漫画</a></li>
+                <li><a href="#">连载小说</a></li>
+                <li><a href="#">热门榜单</a></li>
+                <li><a href="#">作者专区</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn">搜索作品</button>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>权谋天下，只为博君一笑</h1>
+            <p>精选古言权谋、帝王宠溺题材，为您呈现最扣人心弦的“主公受惊了”故事。沉浸式阅读体验，感受权臣与帝王之间惊心动魄的情感博弈。</p>
+            <a href="#" class="cta-btn">立即开始阅读</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-tabs">
+                <div class="filter-tab active">全部</div>
+                <div class="filter-tab">帝王权谋</div>
+                <div class="filter-tab">宫廷心计</div>
+                <div class="filter-tab">先婚后爱</div>
+                <div class="filter-tab">强制爱</div>
+                <div class="filter-tab">追妻火葬场</div>
+            </div>
+            <select class="sort-select">
+                <option>最新更新</option>
+                <option>最热排行</option>
+                <option>评分最高</option>
+                <option>字数最多</option>
+            </select>
+        </div>
+
+        <!-- Content Grid -->
+        <section class="content-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king1/400/600" alt="权臣入画">
+                    <span class="card-badge">连载中</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">权臣入画：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：墨染青衣</span>
+                        <span>今日更新：2话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>古言</span>
+                        <span>权谋</span>
+                        <span>1v1</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king2/400/600" alt="江山为聘">
+                    <span class="card-badge">已完结</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">江山为聘：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：云深不知处</span>
+                        <span>今日更新：0话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>甜宠</span>
+                        <span>爽文</span>
+                        <span>HE</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king3/400/600" alt="摄政王的掌中娇">
+                    <span class="card-badge">连载中</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">摄政王的掌中娇：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：醉卧沙场</span>
+                        <span>今日更新：5话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>强制爱</span>
+                        <span>甜虐</span>
+                        <span>火葬场</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king4/400/600" alt="帝王心术">
+                    <span class="card-badge">连载中</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">帝王心术：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：长歌行</span>
+                        <span>今日更新：1话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>权谋</span>
+                        <span>正剧</span>
+                        <span>虐恋</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king5/400/600" alt="满级大佬穿成主公">
+                    <span class="card-badge">连载中</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">满级大佬穿成主公：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：系统君</span>
+                        <span>今日更新：3话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>穿书</span>
+                        <span>系统</span>
+                        <span>搞事业</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king6/400/600" alt="冷面主公的秘密">
+                    <span class="card-badge">已完结</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">冷面主公的秘密：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：苏小暖</span>
+                        <span>今日更新：0话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>温馨</span>
+                        <span>日常</span>
+                        <span>HE</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+
+             <!-- Card 7 -->
+             <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king7/400/600" alt="祸国妖妃">
+                    <span class="card-badge">连载中</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">祸国妖妃：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：红颜泪</span>
+                        <span>今日更新：2话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>复仇</span>
+                        <span>逆袭</span>
+                        <span>爽文</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/king8/400/600" alt="朕的相爷太粘人">
+                    <span class="card-badge">连载中</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">朕的相爷太粘人：主公受惊了</h3>
+                    <div class="card-meta">
+                        <span>作者：糯米团子</span>
+                        <span>今日更新：4话</span>
+                    </div>
+                    <div class="card-tags">
+                        <span>甜宠</span>
+                        <span>搞笑</span>
+                        <span>HE</span>
+                    </div>
+                    <a href="#" class="read-btn">立即阅读</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="category-section">
+            <div class="section-header">
+                <h2>热门题材分类</h2>
+                <p>探索更多“主公受惊了”风格的精彩故事</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-item">
+                    <span class="cat-icon">👑</span>
+                    <div class="cat-name">帝王权谋</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">⚔️</span>
+                    <div class="cat-name">宫廷心计</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">💍</span>
+                    <div class="cat-name">先婚后爱</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">🥀</span>
+                    <div class="cat-name">强制爱</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">🔥</span>
+                    <div class="cat-name">追妻火葬场</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">📖</span>
+                    <div class="cat-name">穿越时空</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">📚</span>
+                    <div class="cat-name">正剧向</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">🍭</span>
+                    <div class="cat-name">甜宠向</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>主公受惊了</h3>
+                <p>专注于古言权谋与帝王宠溺题材的原创漫画与小说阅读平台。为您提供最沉浸的阅读体验，感受千年前宫廷中的爱恨情仇。</p>
+            </div>
+            <div class="footer-col">
+                <h4>网站导航</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">全本漫画</a></li>
+                    <li><a href="#">连载小说</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>题材分类</h4>
+                <ul>
+                    <li><a href="#">帝王权谋</a></li>
+                    <li><a href="#">宫廷心计</a></li>
+                    <li><a href="#">先婚后爱</a></li>
+                    <li><a href="#">穿越时空</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 主公受惊了阅读网 版权所有. 本站内容仅供个人学习交流，请勿用于商业用途。</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
