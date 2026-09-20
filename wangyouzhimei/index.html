@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网游之美女无双-热血网游同人小说与阅读平台</title>
+    <meta name="description" content="网游之美女无双是热门网游同人小说，讲述主角在虚拟网游世界中的冒险、美女邂逅与巅峰争霸。提供章节阅读、人物介绍、精彩片段及读者互动社区。">
+    <meta name="keywords" content="网游之美女无双,网游小说,同人小说,网游同人,网游之美女无双阅读,网游之美女无双最新章节">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #57606f;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .search-box {
+            display: flex;
+        }
+
+        .search-box input {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2f3542 0%, #1e272e 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSI+PHBhdGggZD0iTTAgNDBWMHoiLz48L3N2Zz4=');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #dfe4ea;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Content Sections */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .section-title a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Book Info Grid */
+        .book-info-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #dfe4ea;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-meta h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .tags {
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #ffeaa7;
+            color: #d35400;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        .meta-item {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .book-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-action {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: 1px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .btn-action:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Chapter List */
+        .chapter-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .chapter-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f1f2f6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .chapter-title {
+            flex: 1;
+        }
+
+        .chapter-title a {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .chapter-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .chapter-date {
+            color: #a4b0be;
+            font-size: 0.85rem;
+        }
+
+        .chapter-status {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f2f6;
+            color: var(--secondary-color);
+        }
+
+        .ranking-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .ranking-num {
+            width: 24px;
+            height: 24px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .ranking-num.top-1 { background-color: var(--primary-color); }
+        .ranking-num.top-2 { background-color: var(--accent-color); }
+        .ranking-num.top-3 { background-color: #2ed573; }
+
+        .ranking-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .book-info-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .book-actions {
+                justify-content: center;
+            }
+
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>📚</span> 小说阅读网
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">玄幻</a></li>
+                    <li><a href="#">都市</a></li>
+                    <li><a href="#">网游</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索小说...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>网游之美女无双</h1>
+            <p>重温经典网游小说，体验虚拟世界中的热血战斗与绝世邂逅。点击阅读，开启你的巅峰之旅。</p>
+            <div>
+                <a href="#content" class="btn">开始阅读</a>
+                <a href="#" class="btn btn-outline">加入书架</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" id="content">
+        <!-- Book Info Section -->
+        <section class="book-content">
+            <div class="book-info-grid">
+                <div class="book-cover">
+                    <!-- Using a placeholder image that fits the gaming theme -->
+                    <img src="https://picsum.photos/seed/gaming/200/300" alt="网游之美女无双封面">
+                </div>
+                <div class="book-meta">
+                    <div class="tags">
+                        <span class="tag">网游</span>
+                        <span class="tag">热血</span>
+                        <span class="tag">后宫</span>
+                        <span class="tag">爽文</span>
+                    </div>
+                    <h1>网游之美女无双</h1>
+                    <div class="meta-item">作者：<span style="color: var(--text-main); font-weight: bold;">孤独漂流</span></div>
+                    <div class="meta-item">状态：<span style="color: var(--text-sub);">连载中</span></div>
+                    <div class="meta-item">分类：<span>虚拟网游</span></div>
+                    <div class="meta-item">字数：<span>1,200,000+</span></div>
+                    
+                    <div class="book-actions">
+                        <button class="btn-action">最新章节</button>
+                        <button class="btn-action">目录</button>
+                        <button class="btn-action">收藏</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Introduction / Synopsis -->
+            <article class="sidebar-widget">
+                <h3>作品简介</h3>
+                <p>在这个全民网游的时代，一款号称“完美”的虚拟游戏横空出世。它不仅仅是游戏，更是无数人寄托梦想、争夺荣耀的战场。主角林峰，一个看似普通的玩家，却意外获得了传说中的隐藏职业——无双剑士。从此，他在游戏世界中杀伐果断，斩妖除魔，不仅以实力征服了各大公会，更收获了无数红颜知己的芳心。从默默无闻的小人物到站在世界之巅的霸主，林峰的故事，才刚刚开始...</p>
+            </article>
+
+            <!-- Latest Chapters -->
+            <div class="section-title">
+                <h2>最新章节</h2>
+                <a href="#">查看全部 &gt;</a>
+            </div>
+            <div class="chapter-list">
+                <div class="chapter-item">
+                    <div class="chapter-title"><a href="#">第五千二百章 神秘的邀请函</a></div>
+                    <div class="chapter-date">10-24</div>
+                    <div class="chapter-status">最新</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-title"><a href="#">第五千二百一章 破碎虚空</a></div>
+                    <div class="chapter-date">10-23</div>
+                    <div class="chapter-status">连载中</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-title"><a href="#">第五千二百章 惊天变局</a></div>
+                    <div class="chapter-date">10-22</div>
+                    <div class="chapter-status">连载中</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-title"><a href="#">第五千一百九十九章 霸气侧漏</a></div>
+                    <div class="chapter-date">10-21</div>
+                    <div class="chapter-status">连载中</div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-title"><a href="#">第五千一百九十八章 暗流涌动</a></div>
+                    <div class="chapter-date">10-20</div>
+                    <div class="chapter-status">连载中</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Hot Ranking -->
+            <div class="sidebar-widget">
+                <h3>今日热门榜</h3>
+                <ul class="ranking-list">
+                    <li>
+                        <span class="ranking-num top-1">1</span>
+                        <a href="#" class="ranking-title">网游之超级霸主</a>
+                    </li>
+                    <li>
+                        <span class="ranking-num top-2">2</span>
+                        <a href="#" class="ranking-title">极品公子</a>
+                    </li>
+                    <li>
+                        <span class="ranking-num top-3">3</span>
+                        <a href="#" class="ranking-title">网游之修罗传说</a>
+                    </li>
+                    <li>
+                        <span class="ranking-num">4</span>
+                        <a href="#" class="ranking-title">绝世高手在都市</a>
+                    </li>
+                    <li>
+                        <span class="ranking-num">5</span>
+                        <a href="#" class="ranking-title">最强弃少</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tags Cloud -->
+            <div class="sidebar-widget">
+                <h3>热门标签</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <a href="#" style="background:#f1f2f6; padding:4px 8px; border-radius:4px; font-size:0.85rem;">网游</a>
+                    <a href="#" style="background:#f1f2f6; padding:4px 8px; border-radius:4px; font-size:0.85rem;">美女</a>
+                    <a href="#" style="background:#f1f2f6; padding:4px 8px; border-radius:4px; font-size:0.85rem;">小说</a>
+                    <a href="#" style="background:#f1f2f6; padding:4px 8px; border-radius:4px; font-size:0.85rem;">阅读</a>
+                    <a href="#" style="background:#f1f2f6; padding:4px 8px; border-radius:4px; font-size:0.85rem;">热血</a>
+                    <a href="#" style="background:#f1f2f6; padding:4px 8px; border-radius:4px; font-size:0.85rem;">爽文</a>
+                </div>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div class="sidebar-widget" style="background: #dfe4ea; text-align: center; color: #747d8c; font-size: 0.9rem;">
+                广告位
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">联系方式</a>
+            <a href="#">免责声明</a>
+            <a href="#">用户协议</a>
+            <a href="#">投稿指南</a>
+        </div>
+        <p>&copy; 2023 小说阅读网 版权所有</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">本站内容仅供学习交流，请勿用于商业用途。</p>
+    </footer>
+
+</body>
+</html>
