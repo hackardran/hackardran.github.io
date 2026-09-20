@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="港台娱乐圈灵异奇谈 - 汇集港台演艺圈深藏不露的灵异传闻、剧组禁忌、明星怪谈及历史悬案。深度解析娱乐圈背后的神秘面纱，提供真实可信的灵异事件档案与避雷指南。">
+    <meta name="keywords" content="港台娱乐圈灵异奇谈,港台娱乐圈传闻,明星灵异事件,演艺圈禁忌,香港娱乐圈怪谈,台湾娱乐圈灵异">
+    <title>港台娱乐圈灵异奇谈 - 演艺圈深藏不露的神秘档案与禁忌传说</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-body: #0f0f13;
+            --bg-card: #1a1a24;
+            --bg-card-hover: #242432;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0b0;
+            --accent-gold: #d4af37;
+            --accent-red: #c0392b;
+            --accent-blue: #2980b9;
+            --border-color: #333340;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(15, 15, 19, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-unit);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://picsum.photos/seed/ghostly/1600/600') no-repeat center center/cover;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-red);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Featured Grid */
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-red);
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: normal;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--accent-gold);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #2a2a35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-red);
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            padding-top: 12px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .sidebar-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .rank-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .rank-num {
+            background-color: #333;
+            color: var(--text-muted);
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background-color: var(--accent-red); color: #fff; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #d35400; color: #fff; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #e67e22; color: #fff; }
+
+        .rank-list a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .rank-list a:hover {
+            color: var(--accent-gold);
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .category-list a:hover {
+            color: var(--text-main);
+        }
+
+        .category-count {
+            background-color: #333;
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+
+        /* Dark Mode / Ghostly Elements */
+        .ghost-icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            margin-right: 5px;
+            fill: currentColor;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050507;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 20px auto 0;
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            <svg class="ghost-icon" viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 1.38.56 2.63 1.46 3.54C6.5 11.9 5 14.05 5 16.5c0 3.04 2.46 5.5 5.5 5.5h3c3.04 0 5.5-2.46 5.5-5.5 0-2.45-1.5-4.6-3.46-4.96C18.44 9.63 19 8.38 19 7c0-2.76-2.24-5-5-5zm-2 7h4c.55 0 1 .45 1 1s-.45 1-1 1h-4c-.55 0-1-.45-1-1s.45-1 1-1zm0 4h4c.55 0 1 .45 1 1s-.45 1-1 1h-4c-.55 0-1-.45-1-1s.45-1 1-1z"/></svg>
+            <span>灵异档案</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">香港传闻</a></li>
+                <li><a href="#">台湾怪谈</a></li>
+                <li><a href="#">剧组禁忌</a></li>
+                <li><a href="#">历史悬案</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>港台娱乐圈灵异奇谈</h1>
+    <p>探索繁华表象下的阴影，整理港台演艺圈流传百年的灵异传闻、剧组怪谈与明星宿命。理性辨析，敬畏未知。</p>
+</section>
+
+<div class="container">
+    <!-- Main Content -->
+    <main>
+        <section>
+            <div class="section-title">
+                <h2>深度档案</h2>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+            <div class="grid">
+                <!-- Article 1 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">经典</span>
+                        <img src="https://picsum.photos/seed/hkghost/400/300" alt="香港影圈深夜录音">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">香港影圈深夜录音传闻：某剧组收工后的诡异回声</h3>
+                        <p class="card-excerpt">上世纪90年代某部警匪片拍摄期间，深夜收工后导演室传出异常回声，经录音师事后分析，发现背景中似乎夹杂着不属于人类的低语声。</p>
+                        <div class="card-meta">
+                            <span>2023-10-15</span>
+                            <span>香港影坛</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">女星</span>
+                        <img src="https://picsum.photos/seed/twghost/400/300" alt="台湾综艺节目录制">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">台湾综艺节目录制：某知名女主持人的灵异伴舞</h3>
+                        <p class="card-excerpt">在一场高收视率综艺中，镜头捕捉到画面边缘有黑影闪动，事后多位工作人员证实，该时段后台确实有“看不见的访客”。</p>
+                        <div class="card-meta">
+                            <span>2023-10-12</span>
+                            <span>综艺圈</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">剧组</span>
+                        <img src="https://picsum.photos/seed/night/400/300" alt="废弃片场">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">废弃片场的红衣女孩：某老牌影视基地的清洁工讲述</h3>
+                        <p class="card-excerpt">一位负责清理片场的清洁工透露，在深夜整理道具时，曾多次看到红衣模特的假人摆放在不同的机位上，仿佛在监视拍摄。</p>
+                        <div class="card-meta">
+                            <span>2023-10-10</span>
+                            <span>影视基地</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="card">
+                    <div class="card-img">
+                        <span class="card-tag">宿命</span>
+                        <img src="https://picsum.photos/seed/accident/400/300" alt="灵异巧合">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">宿命的回响：盘点那些离奇巧合的娱乐圈灵异事件</h3>
+                        <p class="card-excerpt">从早期无线电视台的“九龙城寨传说”到台湾艺能界的“后空翻意外”，整理一系列看似巧合却又令人背脊发凉的关联。</p>
+                        <div class="card-meta">
+                            <span>2023-10-08</span>
+                            <span>综合盘点</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section style="margin-top: 50px;">
+            <div class="section-title">
+                <h2>热门专题</h2>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">艺人灵异经历分享会</h3>
+                        <p class="card-excerpt">整理多位公开谈论过灵异经历的港台明星语录，探讨娱乐圈高压环境下的心理与超自然现象。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">风水与选角传说</h3>
+                        <p class="card-excerpt">深入探讨港台影视圈中关于“选角风水”、“片场禁忌”的种种说法，以及它们对影视作品的影响。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">香港TVB旧楼传说</h3>
+                        <p class="card-excerpt">关于TVB总部大楼、旧厂房以及演员宿舍流传的灵异故事，是港剧迷不可错过的经典内容。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside>
+        <div class="sidebar-box">
+            <h3>本月热点榜单</h3>
+            <ul class="rank-list">
+                <li>
+                    <span class="rank-num">1</span>
+                    <a href="#">香港TVB旧厂房的深夜搬运声</a>
+                </li>
+                <li>
+                    <span class="rank-num">2</span>
+                    <a href="#">某知名女星家中出现的黑影</a>
+                </li>
+                <li>
+                    <span class="rank-num">3</span>
+                    <a href="#">台湾综艺节目录制时的异响</a>
+                </li>
+                <li>
+                    <span class="rank-num">4</span>
+                    <a href="#">90年代香港电影圈的“片场禁忌”</a>
+                </li>
+                <li>
+                    <span class="rank-num">5</span>
+                    <a href="#">关于“红白事”与演艺圈的关联</a>
+                </li>
+                <li>
+                    <span class="rank-num">6</span>
+                    <a href="#">某老牌武打明星的离奇去世</a>
+                </li>
+                <li>
+                    <span class="rank-num">7</span>
+                    <a href="#">香港夜总会的不速之客</a>
+                </li>
+                <li>
+                    <span class="rank-num">8</span>
+                    <a href="#">某古装剧片场的水杯自动翻转</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-box">
+            <h3>分类浏览</h3>
+            <ul class="category-list">
+                <li><a href="#">香港娱乐圈传闻 <span class="category-count">45</span></a></li>
+                <li><a href="#">台湾娱乐圈怪谈 <span class="category-count">38</span></a></li>
+                <li><a href="#">明星灵异经历 <span class="category-count">22</span></a></li>
+                <li><a href="#">剧组禁忌与风水 <span class="category-count">56</span></a></li>
+                <li><a href="#">历史悬案档案 <span class="category-count">18</span></a></li>
+                <li><a href="#">影视基地探秘 <span class="category-count">30</span></a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-box" style="text-align: center; background: linear-gradient(180deg, #1a1a24 0%, #0f0f13 100%);">
+            <h3>关于本站</h3>
+            <p style="font-size: 0.85rem; color: #888; margin-bottom: 15px;">本站致力于整理港台演艺圈流传的灵异传闻与历史悬案，内容仅供娱乐与参考。</p>
+            <a href="#" style="color: var(--accent-gold); font-size: 0.9rem; font-weight: bold;">了解更多 &rarr;</a>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <div class="container" style="margin: 0 auto; padding: 0 20px; display: block; text-align: left;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div class="logo" style="font-size: 1.2rem;">
+                <span>灵异档案</span>
+            </div>
+            <div>
+                <a href="#" style="margin: 0 10px; color: #888;">关于我们</a>
+                <a href="#" style="margin: 0 10px; color: #888;">投稿爆料</a>
+                <a href="#" style="margin: 0 10px; color: #888;">隐私政策</a>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2023 港台娱乐圈灵异奇谈网. 保留所有权利。</p>
+    <div class="disclaimer">
+        <p>免责声明：本站所有内容均来源于网络收集整理，仅供娱乐与学术研究参考。对于传闻的真实性，本站不作任何保证。请读者理性看待，切勿迷信。</p>
+    </div>
+</footer>
+
+</body>
+</html>
